@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven_3.9.6'   // Name you added in Jenkins tools
+        maven 'maven'   // Name you added in Jenkins tools
     }
 
     environment {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/your/repository.git'
+                git branch: 'main', url: 'https://github.com/srilakshmi0602/springboot-redis-demo.git'
             }
         }
 
