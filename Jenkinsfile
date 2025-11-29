@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'   // Name you added in Jenkins tools
+        maven 'maven'   // Name configured under Jenkins Global Tool Configuration
     }
 
     environment {
@@ -37,7 +37,7 @@ pipeline {
                 script {
                     sh """
                         echo "Stopping old containers..."
-                        docker compose down || true
+                        docker-compose down || true
                     """
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
                 script {
                     sh """
                         echo "Starting new containers..."
-                        docker compose up -d --build
+                        docker-compose up -d --build
                     """
                 }
             }
